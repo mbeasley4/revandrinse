@@ -6,8 +6,18 @@ import { urlFor } from "@/sanity/lib/image";
 export const revalidate = 60;
 
 export const metadata: Metadata = {
-  title: "Before & After | Rev & Rinse Auto Detailing",
-  description: "See real transformation results from Rev & Rinse Auto Detailing in Madeira, Ohio.",
+  title: "Before & After Results",
+  description:
+    "Real transformation results from Rev & Rinse Auto Detailing in Madeira, Ohio. Drag each slider to see the difference — exterior, interior, and paint correction.",
+  alternates: {
+    canonical: "https://revandrinse.com/before-after",
+  },
+  openGraph: {
+    title: "Before & After | Rev & Rinse Auto Detailing",
+    description:
+      "Real transformation results from Rev & Rinse Auto Detailing in Madeira, Ohio. See the difference for yourself.",
+    url: "https://revandrinse.com/before-after",
+  },
 };
 
 interface SanityPair {
