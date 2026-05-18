@@ -21,7 +21,7 @@ export default function Bubbles() {
             width: b.size,
             height: b.size,
             animationDuration: `${b.duration}s`,
-            animationDelay: `${b.delay}s`,
+            animationDelay: `-${b.delay}s`,
             // Soap-bubble look: thin iridescent rim + transparent centre + top-left highlight
             background: `radial-gradient(
               circle at 32% 30%,
