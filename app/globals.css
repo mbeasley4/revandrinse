@@ -1,26 +1,111 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: var(--font-bebas);
+  --font-display: var(--font-oswald);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-oswald), Arial, sans-serif;
+}
+
+/* ── Bubble float animation ── */
+@keyframes bubble {
+  0%   { transform: translateY(0) scale(1);   opacity: 0; }
+  10%  { opacity: 0.5; }
+  85%  { opacity: 0.25; }
+  100% { transform: translateY(-115vh) scale(1.6); opacity: 0; }
+}
+
+.animate-bubble {
+  animation: bubble linear infinite;
+}
+
+/* ── Purple glow utilities ── */
+.text-glow {
+  text-shadow:
+    0 0 20px rgba(168, 85, 247, 1),
+    0 0 50px rgba(168, 85, 247, 0.6),
+    0 0 100px rgba(147, 51, 234, 0.3);
+}
+
+.text-glow-sm {
+  text-shadow:
+    0 0 10px rgba(168, 85, 247, 0.8),
+    0 0 25px rgba(168, 85, 247, 0.4);
+}
+
+.glow-border {
+  box-shadow:
+    0 0 0 1px rgba(147, 51, 234, 0.5),
+    0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+.btn-glow {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.btn-glow:hover {
+  box-shadow:
+    0 0 20px rgba(147, 51, 234, 0.8),
+    0 0 40px rgba(147, 51, 234, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ── Card hover glow ── */
+.card-glow {
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+.card-glow:hover {
+  box-shadow:
+    0 0 0 1px rgba(168, 85, 247, 0.5),
+    0 0 30px rgba(147, 51, 234, 0.35);
+  transform: translateY(-3px);
+}
+
+/* ── Form inputs ── */
+.input-purple {
+  background: #0d0d0d;
+  border: 1px solid rgba(109, 40, 217, 0.5);
+  color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.input-purple::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+.input-purple:focus {
+  outline: none;
+  border-color: #a855f7;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.35);
+}
+
+/* ── Range slider ── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: linear-gradient(to right, #7c3aed, #a855f7);
+  border-radius: 2px;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #a855f7;
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+  cursor: grab;
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
 }
