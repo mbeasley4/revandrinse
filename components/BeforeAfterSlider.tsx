@@ -39,7 +39,10 @@ export default function BeforeAfterSlider({ before, after, pairNumber, descripti
   return (
     <div
       className="rounded-xl overflow-hidden"
-      style={{ border: "1px solid rgba(109,40,217,0.35)" }}
+      style={{
+        border: "2px solid rgba(192,132,252,0.9)",
+        boxShadow: "0 0 12px rgba(192,132,252,0.6), 0 0 36px rgba(168,85,247,0.5), 0 0 80px rgba(109,40,217,0.35)",
+      }}
     >
       <div
         ref={containerRef}
