@@ -66,7 +66,17 @@ export default function BeforeAfter() {
           className="btn-glow mt-6 inline-block border border-purple-600 text-purple-300 hover:text-white px-10 py-3 rounded-full text-sm tracking-widest uppercase transition-colors"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
-          See All Transformations →
+          See All Transformations&nbsp;
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            className="inline-block w-4 h-4 align-middle mb-0.5"
+            aria-hidden="true"
+          >
+            {/* 4-point shine burst — evokes glare on a freshly polished car */}
+            <path d="M12 2 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" />
+          </svg>
         </Link>
       </div>
     </section>

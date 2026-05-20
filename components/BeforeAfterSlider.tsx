@@ -79,7 +79,15 @@ export default function BeforeAfterSlider({ before, after, pairNumber, descripti
           style={{ left: `${slider}%`, transform: "translateX(-50%)" }}
         >
           <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-purple-700 border-2 border-white shadow-[0_0_14px_rgba(168,85,247,0.9)] flex items-center justify-center">
-            <span className="text-white text-xs select-none">↔</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-4 h-4 text-white"
+              aria-hidden="true"
+            >
+              <path d="M12 2 L13.2 10.8 L22 12 L13.2 13.2 L12 22 L10.8 13.2 L2 12 L10.8 10.8 Z" />
+            </svg>
           </div>
         </div>
 
