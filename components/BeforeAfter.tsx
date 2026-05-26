@@ -11,7 +11,7 @@ export default function BeforeAfter() {
         The Proof
       </p>
       <h2
-        className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-4"
+        className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-4 text-glow"
         style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
       >
         Before &amp; After

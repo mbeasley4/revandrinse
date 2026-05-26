@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import Pricing from "@/components/Pricing";
 import BeforeAfter from "@/components/BeforeAfter";
 import BookingForm from "@/components/BookingForm";
 import Map from "@/components/Map";
+import FAQ from "@/components/FAQ";
 
 export const metadata: Metadata = {
   title: "Rev & Rinse Auto Detailing | Madeira, Ohio",
@@ -113,7 +115,9 @@ export default function Home() {
       <main className="bg-black text-white">
         <Hero />
         <Services />
+        <Pricing />
         <BeforeAfter />
+        <FAQ />
         <Map />
       </main>
     </>

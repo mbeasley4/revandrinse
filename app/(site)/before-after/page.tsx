@@ -216,9 +216,9 @@ export default async function BeforeAfterPage() {
       </div>
 
       {/* Gallery grid */}
-      <div className="max-w-7xl mx-auto px-4 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto px-4 pb-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {pairs.length === 0 ? (
-          <div className="lg:col-span-2 text-center py-20">
+          <div className="lg:col-span-3 text-center py-20">
             <p
               className="text-white/30 text-sm tracking-widest uppercase"
               style={{ fontFamily: "var(--font-oswald)" }}
@@ -286,17 +286,22 @@ export default async function BeforeAfterPage() {
       {/* CTA */}
       <div
         className="relative py-24 text-center overflow-hidden"
-        style={{
-          background: "radial-gradient(ellipse 80% 100% at 50% 50%, rgba(109,40,217,0.35) 0%, rgba(60,10,120,0.2) 50%, rgba(0,0,0,0) 100%)",
-          borderTop: "1px solid rgba(168,85,247,0.3)",
-        }}
+        style={{ borderTop: "1px solid rgba(168,85,247,0.3)" }}
       >
-        {/* Ambient glow orb */}
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center pointer-events-none"
+          style={{ backgroundImage: "url('/images/cta-bg.png')" }}
+        />
+        {/* Dark overlay so text stays readable */}
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{
-            background: "radial-gradient(ellipse 60% 60% at 50% 50%, rgba(168,85,247,0.12) 0%, transparent 70%)",
-          }}
+          style={{ background: "rgba(0,0,0,0.86)" }}
+        />
+        {/* Purple tint overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: "radial-gradient(ellipse 80% 100% at 50% 50%, rgba(109,40,217,0.35) 0%, rgba(0,0,0,0) 70%)" }}
         />
 
         <div className="relative z-10">
@@ -307,10 +312,15 @@ export default async function BeforeAfterPage() {
             Book Your Detail
           </p>
           <p
-            className="text-white text-2xl md:text-4xl tracking-wide mb-8 leading-snug"
-            style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.06em" }}
+            className="leading-none mb-8"
+            style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
           >
-            Ready to Transform Your Car?
+            <span className="block text-[clamp(2.5rem,8vw,6.5rem)] text-white">
+              Ready to Transform
+            </span>
+            <span className="block text-[clamp(3rem,12vw,9rem)] text-white">
+              Your Car?
+            </span>
           </p>
           <a
             href="sms:+15134322052"

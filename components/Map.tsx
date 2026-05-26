@@ -3,15 +3,17 @@ export default function Map() {
     <section
       className="py-24 text-center relative overflow-hidden"
       style={{
-        background: "linear-gradient(160deg, #0d0520 0%, #110a2e 40%, #1a0533 100%)",
+        background:
+          "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(109,40,217,0.18) 0%, #000 70%)",
       }}
     >
-      {/* Subtle radial glow behind content */}
+      {/* subtle grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(109,40,217,0.18) 0%, transparent 70%)",
+          backgroundImage:
+            "linear-gradient(rgba(109,40,217,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(109,40,217,0.05) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
         }}
       />
 
@@ -23,13 +25,13 @@ export default function Map() {
           Find Us
         </p>
         <h2
-          className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-4"
+          className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-4 text-glow"
           style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
         >
           Service Area
         </h2>
         <p
-          className="text-white/50 text-sm mb-10 tracking-wide"
+          className="text-white/70 text-sm mb-10 tracking-wide"
           style={{ fontFamily: "var(--font-oswald)" }}
         >
           Mobile detailing throughout the I-275 corridor &amp; greater Cincinnati area.
@@ -77,11 +79,13 @@ export default function Map() {
 
           {/* Contact card */}
           <div
-            className="rounded-2xl flex flex-col justify-center gap-8 px-8 py-10 text-left"
+            className="card-glow rounded-2xl flex flex-col justify-center gap-8 px-8 py-10 text-left"
             style={{
-              background: "rgba(109,40,217,0.12)",
-              border: "1px solid rgba(168,85,247,0.3)",
-              boxShadow: "0 0 40px rgba(109,40,217,0.2)",
+              background:
+                "linear-gradient(160deg, rgba(109,40,217,0.22) 0%, rgba(0,0,0,0.75) 100%)",
+              border: "1px solid rgba(168,85,247,0.4)",
+              boxShadow:
+                "0 0 40px rgba(109,40,217,0.15), inset 0 1px 0 rgba(168,85,247,0.15)",
             }}
           >
             <div>

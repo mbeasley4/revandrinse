@@ -1,7 +1,7 @@
 const services = [
   {
     title: "Exterior Wash",
-    desc: "Hand wash, wheel scrub, streak-free rinse & blow dry.",
+    desc: "Wheel cleaning, prewash & contact wash to prevent wear and scratches on paint.",
     icon: (
       <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <ellipse cx="24" cy="34" rx="18" ry="4" strokeOpacity="0.4"/>
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Interior Detail",
-    desc: "Deep vacuuming, surface wipe-down & leather conditioning.",
+    desc: "Floor mat and carpet cleaning, vacuuming, surface wipe down & leather conditioning.",
     icon: (
       <svg viewBox="0 0 48 48" className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="8" y="14" width="32" height="22" rx="3"/>
@@ -71,46 +71,67 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-zinc-950 text-center">
-      <p
-        className="text-purple-400 text-sm tracking-[0.35em] uppercase mb-2"
-        style={{ fontFamily: "var(--font-oswald)" }}
-      >
-        What We Do
-      </p>
-      <h2
-        className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-12"
-        style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
-      >
-        Our Services
-      </h2>
+    <section
+      className="py-24 text-center relative overflow-hidden"
+      style={{
+        background:
+          "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(109,40,217,0.18) 0%, #000 70%)",
+      }}
+    >
+      {/* subtle grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(rgba(109,40,217,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(109,40,217,0.05) 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {services.map((s) => (
-          <div
-            key={s.title}
-            className="card-glow rounded-xl p-6 flex flex-col items-center gap-3 text-center"
-            style={{
-              background:
-                "linear-gradient(145deg, rgba(109,40,217,0.12) 0%, rgba(0,0,0,0.6) 100%)",
-              border: "1px solid rgba(109,40,217,0.25)",
-            }}
-          >
-            <div className="text-purple-400">{s.icon}</div>
-            <h3
-              className="text-white text-lg tracking-widest uppercase"
-              style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.12em" }}
+      <div className="relative z-10">
+        <p
+          className="text-purple-400 text-sm tracking-[0.35em] uppercase mb-2"
+          style={{ fontFamily: "var(--font-oswald)" }}
+        >
+          What We Do
+        </p>
+        <h2
+          className="text-[clamp(2.5rem,8vw,5rem)] text-white leading-none mb-14 text-glow"
+          style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.05em" }}
+        >
+          Our Services
+        </h2>
+
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          {services.map((s) => (
+            <div
+              key={s.title}
+              className="card-glow rounded-2xl p-6 flex flex-col items-center gap-3 text-center"
+              style={{
+                background:
+                  "linear-gradient(160deg, rgba(109,40,217,0.22) 0%, rgba(0,0,0,0.75) 100%)",
+                border: "1px solid rgba(168,85,247,0.4)",
+                boxShadow:
+                  "0 0 40px rgba(109,40,217,0.15), inset 0 1px 0 rgba(168,85,247,0.15)",
+              }}
             >
-              {s.title}
-            </h3>
-            <p
-              className="text-white/50 text-xs leading-relaxed"
-              style={{ fontFamily: "var(--font-oswald)" }}
-            >
-              {s.desc}
-            </p>
-          </div>
-        ))}
+              <div className="text-purple-300 text-glow-sm">{s.icon}</div>
+              <div className="w-8 h-px bg-linear-to-r from-transparent via-purple-500/60 to-transparent" />
+              <h3
+                className="text-purple-300 text-lg tracking-widest uppercase text-glow-sm"
+                style={{ fontFamily: "var(--font-bebas)", letterSpacing: "0.12em" }}
+              >
+                {s.title}
+              </h3>
+              <p
+                className="text-white/70 text-xs leading-relaxed"
+                style={{ fontFamily: "var(--font-oswald)" }}
+              >
+                {s.desc}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
