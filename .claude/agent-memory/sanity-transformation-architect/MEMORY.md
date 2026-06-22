@@ -1,0 +1,3 @@
+- [Project Overview](project_overview.md) — Rev & Rinse stack, beforeAfterPair model, vehicleType taxonomy, content state
+- [Image & GROQ Patterns](image_and_groq_patterns.md) — gallery query with inline url+lqip, createImageUrlBuilder named export, ISR
+- [SEO Structure](seo_structure.md) — NAP, JSON-LD @graph, sitemap/robots, AEO/GEO gaps

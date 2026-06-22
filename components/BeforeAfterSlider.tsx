@@ -7,9 +7,18 @@ interface Props {
   after: string;
   pairNumber: number;
   description?: string;
+  blurBefore?: string;
+  blurAfter?: string;
 }
 
-export default function BeforeAfterSlider({ before, after, pairNumber, description }: Props) {
+export default function BeforeAfterSlider({
+  before,
+  after,
+  pairNumber,
+  description,
+  blurBefore,
+  blurAfter,
+}: Props) {
   const [slider, setSlider] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const dragging = useRef(false);
@@ -60,6 +69,8 @@ export default function BeforeAfterSlider({ before, after, pairNumber, descripti
           fill
           className="object-cover pointer-events-none"
           sizes="(max-width: 1024px) 100vw, 50vw"
+          placeholder={blurAfter ? "blur" : "empty"}
+          blurDataURL={blurAfter}
         />
 
         {/* Before image — clipped from the right */}
@@ -73,6 +84,8 @@ export default function BeforeAfterSlider({ before, after, pairNumber, descripti
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
+            placeholder={blurBefore ? "blur" : "empty"}
+            blurDataURL={blurBefore}
           />
         </div>
 
